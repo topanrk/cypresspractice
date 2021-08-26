@@ -23,3 +23,9 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+//custom command
+Cypress.Commands.add('menuDaftar',() => {
+    cy.visit('https://bukalapak.com')
+    cy.contains('Daftar').click()
+})

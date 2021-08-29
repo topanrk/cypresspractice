@@ -5,6 +5,7 @@ describe('Test Case Product Store',function(){
 
     it('Pilih Hp', function(){
         cy.contains('Samsung galaxy s6').click()
+        cy.wait(6000)
         cy.get('.name').should('have.text','Samsung galaxy s6')
         cy.get('.col-sm-12 > .btn').should('have.text','Add to cart')
         cy.get('.col-sm-12 > .btn').click()
@@ -26,5 +27,8 @@ describe('Test Case Product Store',function(){
         cy.get('#month').type('Februari').should('have.value','Februari')
         cy.get('#year').type('2022').should('have.value','2022')
         cy.get('#orderModal > .modal-dialog > .modal-content > .modal-footer > .btn-primary').click()
+    })
+    Cypress.on('uncaught:exception', (err, runnable)=>{
+        return false
     })
 })
